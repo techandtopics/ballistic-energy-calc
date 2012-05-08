@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Ballistic Energy Calculator - calculates muzzle energy and Taylor Knock Out Factor
+          Copyright (C) 2011 George Yauneridge
+  
+          This program is free software: you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+         the Free Software Foundation, either version 3 of the License, or (at
+          your option) any later version.
+ 
+          This program is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+          General Public License for more details.
+  
+          You should have received a copy of the GNU General Public License
+          along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<resources>
+
+    <!-- ***************   Labels and Results   *************** -->
+       
+    <string name="app_name">Ballistic Energy Calculator</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="velocity">Velocity: </string>
+    <string name="mass">Mass: </string>
+    <string name="diameter">Diameter: </string>
+    <string name="calculate">Calculate</string>
+    <string name="taylorKO">Taylor KO: </string>
+    <string name="energy">Energy: </string>  
+    <string name="hyphen">-</string>  
+    
+    <!-- ***************   Hint Text   *************** -->
+    
+    <string name="velocity_hint">3200 fps</string>
+    <string name="mass_hint">55 grains</string>
+    <string name="diameter_hint">.223 inch</string>
+    
+	<!-- ***************   Messages   *************** -->
+	
+	 <string name="about_content">This application calculates the Taylor KO Factor and 
+        the muzzle energy for a projectile. The muzzle energy is calculated using the
+         firearms industry\'s standard formula. The Taylor KO Factor is a number greater
+          than zero to determine the knock-down power of a projectile. The Taylor KO is 
+          calculated using an equation designed by John Taylor to compare the effectiveness 
+          of firearm rounds based on mass, velocity, and diameter of the projectile. 
+          Website: techandtopics.blogspot.com</string>
+          
+     <string name="help_content">Enter: the mass of the projectile as an integer in grains, 
+        the velocity as an integer in feet per second, and the diameter in inches as a 
+        decimal (.223, .308, etc). The muzzle energy is output in foot-pounds.</string>
+        
+     <string name="error_content">Please input values for velocity and mass. The default 
+        values are hint text and are not supposed to be computed. Diameter must be entered 
+        to have an accurate KO result. More help can be accessed through the menu button.</string>
+	
+	<!-- ***************   Descriptions   *************** -->
+	
+	<string name="help_button_des">Button to display the help message</string>
+	<string name="about_button_des">Button to display the about message</string>
+	<string name="velocity_des">Text field for velocity input</string>
+	<string name="mass_des">Text field for mass input</string>
+	<string name="diameter_des">Text field for diameter input</string>
+	<string name="calculate_des">Button to calculate the result</string>
+    
+</resources>
