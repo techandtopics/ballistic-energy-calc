@@ -17,7 +17,7 @@
 package com.blogspot.techandtopics;
 
 import java.math.BigDecimal;
-import com.blogspot.techandtopics.R;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -32,10 +32,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 /**
- * Ballistic Energy Calc 
- *  Source and support can be found at <http://techandtopics.blogspot.com>.
- *  Version: 1.2 
- *  Target device: HTC Incredible 2.3.4
+ * Ballistic Energy Calculator Source and support can be found at
+ * <http://techandtopics.blogspot.com>. Version: 1.0 Target device: HTC
+ * Incredible API 8
  * 
  * This program calculates the muzzle energy and Taylor KO Factor based on the
  * mass, velocity and diameter input by the user.
@@ -52,6 +51,7 @@ public class EnergyCalc extends Activity {
 
 	private TextView displayTKO; // displays calculated TKO
 	private TextView displayME; // displays calculated Energy
+	private TextView displayMomentum; // displays calculated Momentum
 
 	/**
 	 * Set layout
@@ -67,6 +67,7 @@ public class EnergyCalc extends Activity {
 
 		displayTKO = (TextView) findViewById(R.id.displayTKO);
 		displayME = (TextView) findViewById(R.id.displayME);
+		displayMomentum = (TextView) findViewById(R.id.displayMomentum);
 	}
 
 	/**
@@ -75,18 +76,27 @@ public class EnergyCalc extends Activity {
 	 */
 	@Override
 	protected void onSaveInstanceState(Bundle savedInstanceState) {
-		savedInstanceState.putString("bundleValueTKO", (String) displayTKO.getText());
-		savedInstanceState.putString("bundleValueME", (String) displayME.getText());
+		savedInstanceState.putString("bundleValueTKO",
+				(String) displayTKO.getText());
+		savedInstanceState.putString("bundleValueME",
+				(String) displayME.getText());
+		savedInstanceState.putString("bundleValueMomentum",
+				(String) displayMomentum.getText());
 		super.onSaveInstanceState(savedInstanceState);
 	}
+
 	/**
 	 * 
 	 */
-	@Override public void onRestoreInstanceState(Bundle savedInstanceState) { 
-		super.onRestoreInstanceState(savedInstanceState);   
-		displayTKO.setText(savedInstanceState.getString("bundleValueTKO"));   
-		displayME.setText(savedInstanceState.getString("bundleValueME")); 
+	@Override
+	public void onRestoreInstanceState(Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+		displayTKO.setText(savedInstanceState.getString("bundleValueTKO"));
+		displayME.setText(savedInstanceState.getString("bundleValueME"));
+		displayMomentum.setText(savedInstanceState
+				.getString("bundleValueMomentum"));
 	}
+
 	/**
 	 * Inflate the menu from R.layout.menu.
 	 */
@@ -179,14 +189,14 @@ public class EnergyCalc extends Activity {
 		});
 		alertbox.show();
 	}
-	
+
 	/**
 	 * Displays a dialog box with the error message.
 	 */
 	public void showError() {
 
 		AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
-		alertbox.setMessage(R.string.error_content); 
+		alertbox.setMessage(R.string.error_content);
 
 		alertbox.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface arg0, int arg1) {
@@ -197,59 +207,82 @@ public class EnergyCalc extends Activity {
 	}
 
 	/**
-	 * Closes the software keyboard, sets the variables, computes and displays the result.
+	 * Closes the software keyboard, sets the variables, computes and displays
+	 * the result.
 	 * 
-	 * @param View v
+	 * @param View
+	 *            v
 	 * @throws NumberFormatException
 	 * @throws ArithmeticException
 	 * @throws IllegalArgumentException
 	 */
-	public void calculate(View v) throws NumberFormatException, ArithmeticException, IllegalArgumentException {
+	public void calculate(View v) throws NumberFormatException,
+			ArithmeticException, IllegalArgumentException {
 
 		InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-		inputManager.hideSoftInputFromWindow(v.getWindowToken(), 0); 
-		//close soft keyboard
-		if(massEntry.getText().toString().equals("") ){
+		inputManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+		// close soft keyboard
+		if ((massEntry.getText().toString()).equalsIgnoreCase("")
+				|| (massEntry.getText().toString()).equalsIgnoreCase(" ")) {
 			showError();
-			displayTKO.setText(R.string.hyphen);
-			displayME.setText(R.string.hyphen);
-		}else if((velocityEntry.getText().toString()).equals("")){
+			displayTKO.setText("-");
+			displayME.setText("-");
+			displayMomentum.setText("-");
+		} else if ((velocityEntry.getText().toString()).equalsIgnoreCase("")
+				|| (velocityEntry.getText().toString()).equalsIgnoreCase(" ")) {
 			showError();
-			displayTKO.setText(R.string.hyphen);
-			displayME.setText(R.string.hyphen);
-		}else{
-			int mass = Integer.parseInt(massEntry.getText().toString());
-			
+			displayTKO.setText("-");
+			displayME.setText("-");
+			displayMomentum.setText("-");
+		} else {
+			BigDecimal velocity = new BigDecimal(velocityEntry.getText()
+					.toString());
+			BigDecimal mass = new BigDecimal(massEntry.getText().toString());
+			BigDecimal grainsInPound = new BigDecimal("7000");
+
 			// mass/2 * velocity^2 * (7000*32.163) = muzzle energy
-			BigDecimal result = new BigDecimal(velocityEntry.getText().toString()).pow(2)
-					.multiply(new BigDecimal((double)mass/2));
-			result = result.divide(new BigDecimal("225141"), 4); //4=ROUND_HALF_UP
-			
+			BigDecimal result = mass.divide(new BigDecimal("2"),10,0);
+			result = result.multiply(velocity.pow(2));		
+			result = result.divide(new BigDecimal("225141"),3,0); // 3=scale, 0=ROUND_UP
+
 			displayME.setText(myFormat(result.toString()));
-			
-			if((diameterEntry.getText().toString()).equals("")){
-				displayTKO.setText(R.string.hyphen);
-			}else{
-				result = new BigDecimal(massEntry.getText().toString()).multiply(new BigDecimal(
-						velocityEntry.getText().toString()));
-				result = result.multiply(new BigDecimal(diameterEntry.getText().toString()));
-				result = result.divide(new BigDecimal("7000"),4);
-		
+
+			// (mass/7000) * velocity = momentum ft/lbs
+			BigDecimal resultMomentum = mass.divide(grainsInPound,10,0);
+			resultMomentum = velocity.multiply(resultMomentum);
+
+			displayMomentum.setText(myFormat(resultMomentum.toString()));
+
+			if ((diameterEntry.getText().toString()).equalsIgnoreCase("")
+					|| (diameterEntry.getText().toString())
+							.equalsIgnoreCase(" ")
+					|| (diameterEntry.getText().toString())
+							.equalsIgnoreCase(".")) {
+				displayTKO.setText("-");
+			} else {
+				result = mass.multiply(velocity);
+				result = result.multiply(new BigDecimal(diameterEntry.getText()
+						.toString()));
+				result = result.divide(new BigDecimal("7000"),3,0);
+
 				displayTKO.setText(myFormat(result.toString()));
 			}
-		} 		
+		}
 	}
+
 	/**
-	 * Formats the decimal result to two decimal places. 
+	 * Formats the decimal result to two decimal places.
 	 * 
-	 * @param String numberString
+	 * @param String
+	 *            numberString
 	 * @return String
 	 */
-	static public String myFormat(String numberString){
+	static public String myFormat(String numberString) {
 		int indexDot = numberString.indexOf(".");
-		if(numberString.contains(".") && (numberString.length() - indexDot) > 2){
+		if (numberString.contains(".")
+				&& (numberString.length() - indexDot) > 2) {
 			return numberString.substring(0, indexDot + 2);
-		}else{
+		} else {
 			return numberString;
 		}
 	}

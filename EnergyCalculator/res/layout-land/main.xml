@@ -19,7 +19,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" 
 	android:layout_height="fill_parent">
-		
+	
+	
 	<TextView android:id="@+id/velocityPrompt" 
 		android:textColor="#aaaaaa"
 		android:textSize="17sp"
@@ -28,19 +29,18 @@
 		android:layout_height="wrap_content" 
 		android:layout_marginTop="20dip"
 		android:layout_marginLeft="20dip"
-		android:text="@string/velocity" />
+		android:text="Velocity: " />
 	<EditText android:id="@+id/velocityEntry" 
-		android:contentDescription="@string/velocity_des"
+		android:contentDescription="Text field for velocity input"
 		android:inputType="number"
 		android:maxLength="5"
-		android:hint="@string/velocity_hint"
+		android:hint="3200 fps"
 		android:layout_width="150dp"
 		android:layout_height="wrap_content" 
 		android:layout_marginLeft="1dip"
 		android:background="@android:drawable/editbox_background"
 		android:layout_toRightOf="@id/velocityPrompt" 
 		android:layout_alignTop="@id/velocityPrompt" />
-	
 	<Button android:id="@+id/help" 		
 		android:layout_width="60dip"
 		android:layout_height="wrap_content" 
@@ -48,10 +48,10 @@
 		android:layout_marginLeft="20dip"
 		android:background="#00aaaaaa"
 		android:textColor="#aaaaaa"
-		android:text="@string/help"
+		android:text="Help"
 		android:layout_toRightOf="@id/velocityEntry"
 		android:layout_alignTop="@id/velocityEntry"
-		android:contentDescription="@string/help_button_des"
+		android:contentDescription="Button to display the help message"
 		android:onClick="showHelp" />
 	<Button android:id="@+id/about" 
 		android:layout_width="75dip"
@@ -61,10 +61,9 @@
 		android:layout_alignTop="@+id/help"
 		android:background="#00aaaaaa"
 		android:textColor="#aaaaaa"
-		android:text="@string/about" 
-		android:contentDescription="@string/about_button_des"
+		android:text="About" 
+		android:contentDescription="Button to display the about message"
 		android:onClick="showAbout"/>
-	
 	<TextView android:id="@+id/massPrompt" 
 		android:textColor="#aaaaaa"
 		android:textSize="17sp"
@@ -73,19 +72,18 @@
 		android:layout_height="wrap_content" 
 		android:layout_marginLeft="20dip"
 		android:layout_below="@id/velocityEntry"
-		android:text="@string/mass" />
+		android:text="Mass: " />
 	<EditText android:id="@+id/massEntry" 
-		android:contentDescription="@string/mass_des"
-		android:inputType="number"
+		android:contentDescription="Text field for mass input"
+		android:inputType="numberDecimal"
 		android:maxLength="6"
-		android:hint="@string/mass_hint"
+		android:hint="55.0 grains"
 		android:layout_width="150dip"
 		android:layout_height="wrap_content" 
 		android:layout_marginLeft="1dip"
 		android:background="@android:drawable/editbox_background"
 		android:layout_toRightOf="@id/massPrompt" 
 		android:layout_alignTop="@id/massPrompt"/>
-	
 	<TextView android:id="@+id/diameterPrompt" 
 		android:textColor="#aaaaaa"
 		android:textSize="17sp"
@@ -94,40 +92,38 @@
 		android:layout_height="wrap_content"
 		android:layout_marginLeft="20dip" 
 		android:layout_below="@id/massEntry"
-		android:text="@string/diameter" />
+		android:text="Diameter: " />
 	<EditText android:id="@+id/diameterEntry" 
-		android:contentDescription="@string/diameter_des"
+		android:contentDescription="Text field for diameter input"
 		android:inputType="numberDecimal"
 		android:maxLength="5"
-		android:hint="@string/diameter_hint"
+		android:hint=".223 inch"
 		android:layout_width="150dp"
 		android:layout_height="wrap_content" 
 		android:layout_marginLeft="1dip"
 		android:background="@android:drawable/editbox_background"
 		android:layout_toRightOf="@id/diameterPrompt" 
 		android:layout_alignTop="@id/diameterPrompt" />
-	
 	<Button android:id="@+id/calculate" 
-		android:contentDescription="@string/calculate_des"
+		android:contentDescription="Button to calculate result"
 		android:layout_width="120dip"
 		android:layout_height="50dip" 
 		android:layout_marginLeft="25dip"
 		android:layout_toRightOf="@id/diameterEntry"
 		android:layout_alignTop="@id/diameterEntry"
 		android:textStyle="bold"
-		android:text="@string/calculate"
+		android:text="Calculate"
 		android:onClick="calculate"/>
-	
 	<TextView android:id="@+id/labelTKO" 
 		android:textColor="#aaaaaa"
 		android:textSize="17sp"
 		android:textStyle="bold"
-		android:layout_width="100dip"
+		android:layout_width="110dip"
 		android:layout_height="wrap_content"		
 		android:layout_marginTop="10dip" 
 		android:layout_marginLeft="20dip" 
 		android:layout_below="@id/calculate"
-		android:text="@string/taylorKO" />
+		android:text="Taylor KO: " />
 	<TextView android:id="@+id/displayTKO" 
 		android:textSize="17sp"
 		android:textStyle="bold"
@@ -136,18 +132,17 @@
 		android:layout_toRightOf="@id/labelTKO"
 		android:layout_alignTop="@id/labelTKO"
 		android:textColor="#aaaaaa"
-		android:text="@string/hyphen" />	
-		
+		android:text=" " />	
 	<TextView android:id="@+id/labelME" 
 		android:textColor="#aaaaaa"
 		android:textSize="17sp"
 		android:textStyle="bold"
-		android:layout_width="100dip"
+		android:layout_width="110dip"
 		android:layout_height="wrap_content"
 		android:layout_marginLeft="20dip" 
 		android:layout_marginTop="10dip" 
 		android:layout_below="@id/labelTKO"
-		android:text="@string/energy" />
+		android:text="Energy: " />
 	<TextView android:id="@+id/displayME" 
 		android:textSize="17sp"
 		android:textStyle="bold"
@@ -156,5 +151,24 @@
 		android:layout_toRightOf="@id/labelME"
 		android:layout_alignTop="@id/labelME"
 		android:textColor="#aaaaaa"
-		android:text="@string/hyphen" />	
+		android:text=" " />	
+	<TextView android:id="@+id/labelMomentum" 
+		android:textColor="#aaaaaa"
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="110dip"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dip" 
+		android:layout_marginTop="10dip" 
+		android:layout_below="@id/labelME"
+		android:text="Momentum: " />
+	<TextView android:id="@+id/displayMomentum" 
+		android:textSize="17sp"
+		android:textStyle="bold"
+		android:layout_width="140dip"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/labelMomentum"
+		android:layout_alignTop="@id/labelMomentum"
+		android:textColor="#aaaaaa"
+		android:text=" " />
 </RelativeLayout>
