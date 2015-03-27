@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Ballistic Energy Calculator - calculates muzzle energy and Taylor Knock Out Factor
+          Copyright (C) 2011 George Yauneridge
+  
+          This program is free software: you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+         the Free Software Foundation, either version 3 of the License, or (at
+          your option) any later version.
+ 
+          This program is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+          General Public License for more details.
+  
+          You should have received a copy of the GNU General Public License
+          along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+
+    <string name="about_content">Esta aplicación calcula el factor de KO Taylor y la energía del bozal para un proyectil. La energía inicial se calcula utilizando las armas de fuego de la fórmula estándar de la industria. Momentum es la masa multiplicada por la velocidad. El Factor KO Taylor es un número mayor que cero para determinar la potencia de derribo de un proyectil. El Taylor KO se calcula usando una ecuación diseñado por John Taylor para comparar la eficacia de rondas de armas de fuego sobre la base de masa, velocidad, y el diámetro del proyectil. Sitio web: techandtopics.blogspot.com</string>
+    <string name="app_name">Ballistic Energy Calculator</string>
+    <string name="help_content">Entrada: el peso del proyectil en gramos (por ejemplo, 7,45 . ), La velocidad como un entero en metros por segundo (por ejemplo, 390 . ) , Y el diámetro en milímetros (por ejemplo, 9 . ) . La energía del bozal y el impulso se emite en Julios .</string>
+    <string name="error_content">Por favor, valores de entrada para la velocidad y la masa. Los valores predeterminados son texto de sugerencia y no se supone que ser calculado. El diámetro debe ser introducida para tener un resultado exacto KO. Más ayuda se puede acceder a través del botón de menú.</string>
+   
+    <string name="help_des">Botón para mostrar el mensaje de ayuda</string>
+    <string name="about_des">Botón para visualizar el mensaje sobre</string>
+    <string name="velocity_des">Campo de texto de entrada de la velocidad</string>
+    <string name="mass_des">Campo de texto para la entrada masiva</string>
+    <string name="diameter_des">Campo de texto para la entrada de diámetro</string>
+    <string name="calculate_des">Botón para calcular resultado</string>
+   
+    <string name="help">Ayuda</string>
+    <string name="about">Acerca de</string>
+    <string name="velocity">Velocidad:</string>
+    <string name="mass">Misa :</string>
+    <string name="diameter">Diámetro:</string>
+    <string name="calculate">calcular</string>
+    <string name="taylor_ko">Taylor KO:</string>
+    <string name="energy">Energía :</string>
+    <string name="momentum">Momentum:</string>
+    <string name="ok">Okay</string>
+   
+    <string name="velocity_hint">m/s</string>
+    <string name="mass_hint">gramos</string>
+    <string name="diameter_hint">mm</string>
+
+</resources>

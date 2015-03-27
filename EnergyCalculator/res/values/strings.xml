@@ -20,7 +20,31 @@
     <string name="about_content">This application calculates the Taylor KO Factor and the muzzle energy for a projectile. The muzzle energy is calculated using the firearms industry\'s standard formula. Momentum is mass multiplied by velocity. The Taylor KO Factor is a number greater than zero to determine the knock-down power of a projectile. The Taylor KO is calculated using an equation designed by John Taylor to compare the effectiveness of firearm rounds based on mass, velocity, and diameter of the projectile. Website: techandtopics.blogspot.com</string>
     <string name="app_name">Ballistic Energy Calculator</string>
     <string name="help_content">Enter: the mass of the projectile in grains (eg. 185.5), the velocity as an integer in feet per second (eg. 1100), and the diameter in inches as a decimal (eg. .451). The muzzle energy and momentum is output in foot-pounds.</string>
+    <string name="error_content">Please input values for velocity and mass. The default values are hint text and are not supposed to be computed. Diameter must be entered to have an accurate KO result. More help can be accessed through the menu button.</string>
+    
+    <!-- For content descriptions -->
+    <string name="help_des">Button to display the help message</string>
+    <string name="about_des">Button to display the about message</string>
+    <string name="velocity_des">Text field for velocity input</string>
+    <string name="mass_des">Text field for mass input</string>
+    <string name="diameter_des">Text field for diameter input</string>
+    <string name="calculate_des">Button to calculate result</string>
+    
+    <!-- For labels -->
     <string name="help">Help</string>
     <string name="about">About</string>
-    <string name="error_content">Please input values for velocity and mass. The default values are hint text and are not supposed to be computed. Diameter must be entered to have an accurate KO result. More help can be accessed through the menu button.</string>
+    <string name="velocity">Velocity: </string>
+    <string name="mass">Mass: </string>
+    <string name="diameter">Diameter: </string>
+    <string name="calculate">Calculate</string>
+    <string name="taylor_ko">Taylor KO: </string>
+    <string name="energy">Energy: </string>
+    <string name="momentum">Momentum: </string>
+    <string name="ok">Ok</string>
+    
+    <!-- For hint text -->
+    <string name="velocity_hint">3200 fps</string>
+    <string name="mass_hint">55.0 grains</string>
+    <string name="diameter_hint">.223 inch</string>
+    
 </resources>

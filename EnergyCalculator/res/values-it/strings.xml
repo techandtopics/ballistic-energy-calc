@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Ballistic Energy Calculator - calculates muzzle energy and Taylor Knock Out Factor
+          Copyright (C) 2011 George Yauneridge
+  
+          This program is free software: you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+         the Free Software Foundation, either version 3 of the License, or (at
+          your option) any later version.
+ 
+          This program is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+          General Public License for more details.
+  
+          You should have received a copy of the GNU General Public License
+          along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+
+    <string name="about_content">Questa applicazione calcola la Taylor KO Factor e l\'energia muso di un proiettile. L\'energia muso è calcolata utilizzando le armi da fuoco formula standard del settore. Momentum è la massa moltiplicata per la velocità. Il Taylor KO Factor è un numero maggiore di zero per determinare la potenza knock-down di un proiettile. La Taylor KO è calcolato utilizzando un\'equazione progettata da John Taylor per confrontare l\'efficacia dei colpi di arma da fuoco a base di massa, velocità, e il diametro del proiettile. Sito web: techandtopics.blogspot.com</string>
+    <string name="app_name">Ballistic Energy Calculator</string>
+    <string name="help_content">Input : il peso del proiettile in grammi ( per esempio 7,45 . ) , La velocità come un numero intero in metri al secondo ( ad esempio 390 . ) , E il diametro in millimetri (ad esempio 9 . ) . L\'energia muso e la quantità di moto è uscita in Joule .</string>
+    <string name="error_content">Si prega di valori di input per la velocità e la massa. I valori predefiniti sono testo di suggerimento e non dovrebbero essere calcolati. Diametro deve essere inserito per avere un risultato preciso KO. Più aiuto si può accedere attraverso il tasto menu.</string>
+    
+    <string name="help_des">Pulsante per visualizzare il messaggio di aiuto</string>
+    <string name="about_des">Pulsante per visualizzare il messaggio sulla</string>
+    <string name="velocity_des">Campo di testo per l\'input di velocità</string>
+    <string name="mass_des">Campo di testo per l\'immissione di massa</string>
+    <string name="diameter_des">Campo di testo per l\'input di diametro</string>
+    <string name="calculate_des">Pulsante per calcolare risultato</string>
+    
+    <string name="help">Aiuto</string>
+    <string name="about">Circa</string>
+    <string name="velocity">Velocità:</string>
+    <string name="mass">peso</string>
+    <string name="diameter">diametro</string>
+    <string name="calculate">calcolare</string>
+    <string name="taylor_ko">Taylor KO:</string>
+    <string name="energy">energia</string>
+    <string name="momentum">impulso</string>
+    <string name="ok">Ok</string>
+    
+    <string name="velocity_hint">m/s</string>
+    <string name="mass_hint">grammo</string>
+    <string name="diameter_hint">mm</string>
+
+</resources>

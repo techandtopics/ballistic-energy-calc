@@ -133,7 +133,7 @@ public class EnergyCalc extends Activity {
 		AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
 		alertbox.setMessage(R.string.about_content);
 
-		alertbox.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+		alertbox.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface arg0, int arg1) {
 
 			}
@@ -149,7 +149,7 @@ public class EnergyCalc extends Activity {
 		AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
 		alertbox.setMessage(R.string.about_content);
 
-		alertbox.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+		alertbox.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface arg0, int arg1) {
 
 			}
@@ -166,7 +166,7 @@ public class EnergyCalc extends Activity {
 		AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
 		alertbox.setMessage(R.string.help_content);
 
-		alertbox.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+		alertbox.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface arg0, int arg1) {
 
 			}
@@ -182,7 +182,7 @@ public class EnergyCalc extends Activity {
 		AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
 		alertbox.setMessage(R.string.help_content);
 
-		alertbox.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+		alertbox.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface arg0, int arg1) {
 
 			}
@@ -198,7 +198,7 @@ public class EnergyCalc extends Activity {
 		AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
 		alertbox.setMessage(R.string.error_content);
 
-		alertbox.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+		alertbox.setNeutralButton(R.string.ok, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface arg0, int arg1) {
 
 			}

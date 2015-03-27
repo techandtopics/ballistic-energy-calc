@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Ballistic Energy Calculator - calculates muzzle energy and Taylor Knock Out Factor
+          Copyright (C) 2011 George Yauneridge
+  
+          This program is free software: you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+         the Free Software Foundation, either version 3 of the License, or (at
+          your option) any later version.
+ 
+          This program is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+          General Public License for more details.
+  
+          You should have received a copy of the GNU General Public License
+          along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+
+    <string name="about_content">Это приложение вычисляет KO фактор Тейлора и дульной энергией для снаряда. Дульная энергия рассчитывается с использованием огнестрельного оружия стандартной формуле промышленность. Импульс масса умноженное на скорости. Тейлор KO фактор является число больше нуля, чтобы определить бросовым силу снаряда. Тейлор KO рассчитывается с помощью уравнения разработанный Джоном Тейлором, чтобы сравнить эффективность огнестрельного оружия туров на основе массы, скорости и диаметра снаряда. Сайт: techandtopics.blogspot.com</string>
+    <string name="app_name">Баллистический Калькулятор энергии</string>
+    <string name="help_content">Входной сигнал: вес снаряда в граммах ( например 7,45 . ), Скорость в виде целого числа в метрах в секунду (например, 390 . ) , И диаметром в миллиметрах ( например, 9 . ) . Дульная энергия и импульс выводится в джоулях .</string>
+    <string name="error_content">Пожалуйста, вводите значения для скорости и массы . Значения по умолчанию намек текст и не должны быть вычислены . Диаметр должен быть введен , чтобы иметь точный результат KO . Дополнительная помощь можно получить через меню кнопки .</string>
+    
+    <string name="help_des">Кнопка для отображения сообщения справки</string>
+    <string name="about_des">Кнопка для отображения о сообщение</string>
+    <string name="velocity_des">Текстовое поле для ввода скорости</string>
+    <string name="mass_des">Текстовое поле для массового ввода</string>
+    <string name="diameter_des">Текстовое поле для ввода диаметром</string>
+    <string name="calculate_des">Кнопка для расчета результата</string>
+    
+    <string name="help">Помощь</string>
+    <string name="about">Об этом</string>
+    <string name="velocity">Скорость:</string>
+    <string name="mass">Macca</string>
+    <string name="diameter">диаметр:</string>
+    <string name="calculate">вычислять</string>
+    <string name="taylor_ko">Тейлор KO :</string>
+    <string name="energy">Энергия :</string>
+    <string name="momentum">инерция</string>
+    <string name="ok">Хорошо</string>
+    
+    <string name="velocity_hint">м/сек</string>
+    <string name="mass_hint">г</string>
+    <string name="diameter_hint">MM</string>
+</resources>
